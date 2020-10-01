@@ -1,6 +1,6 @@
 let url = new URLSearchParams(window.location.search);
 let api_token = "EbcDwnt2X2QCUF9OeXvVJvToNFwWbYaIN6kb4gOfcrT0ygwS3zuciGbLjXeP";
-let include = "&include=squad,coach,transfers,trophies";
+let include = "&include=squad.player,coach,transfers,trophies";
 
 function fetchTeam() {
 
@@ -17,7 +17,10 @@ function fetchTeam() {
                 let coachAge = document.querySelector(".coachAge");
                 let coachImg = document.querySelector(".coachImg");
                 let bigLogo = document.querySelector(".bigLogo");
-                let squadArray = teamData.squad.data;
+                let teamList = teamData.squad.data;
+                let commonName = teamList[1].player.data.common_name;
+                
+
 
                 nameTitle.innerHTML = teamData.name;
                 coachName.innerHTML = teamData.coach.data.fullname;
@@ -25,20 +28,19 @@ function fetchTeam() {
                 coachImg.src = teamData.coach.data.image_path;
                 bigLogo.src = teamData.logo_path;
 
-                
-                squadArray.forEach(function (player) {
-                    console.log(player);    
-                    let leagueTitle = document.querySelector(".playerList");
-                    const players = document.createElement('div');
-                    playerName.classList.add('player');
+                console.log(teamList); 
+               
+                /* teamList.forEach(function (players) {
+                    let playerList = document.querySelector(".mainCompetition");
+                    const playerName = document.createElement('div');
+                    playerName.classList.add('playerName');
                     playerName.innerHTML = `
-                    <p>${player.player_id}</p>
-                    
+                   <p>hej</p>
                    
                    `
-                    leagueTitle.appendChild(players)
+                    playerList.appendChild(playerName)
     
-                })
+                })  */
 
 
                 })
