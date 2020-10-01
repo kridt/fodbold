@@ -8,18 +8,38 @@ function fetchTeam() {
         fetch(`https://soccer.sportmonks.com/api/v2.0/teams/${url.get("id")}?api_token=${api_token}${include}`)
             .then(res => res.json())
             .then(function (data) {
-                console.log(data.data);
+                /* console.log(data.data); */
 
 
                 let teamData = data.data;
                 let nameTitle = document.querySelector(".mainTeamName");
                 let coachName = document.querySelector(".coachName");
-
+                let coachAge = document.querySelector(".coachAge");
+                let coachImg = document.querySelector(".coachImg");
+                let bigLogo = document.querySelector(".bigLogo");
+                let squadArray = teamData.squad.data;
 
                 nameTitle.innerHTML = teamData.name;
                 coachName.innerHTML = teamData.coach.data.fullname;
+                coachAge.innerHTML = teamData.coach.data.birthdate;
+                coachImg.src = teamData.coach.data.image_path;
+                bigLogo.src = teamData.logo_path;
 
                 
+                squadArray.forEach(function (player) {
+                    console.log(player);    
+                    let leagueTitle = document.querySelector(".playerList");
+                    const players = document.createElement('div');
+                    playerName.classList.add('player');
+                    playerName.innerHTML = `
+                    <p>${player.player_id}</p>
+                    
+                   
+                   `
+                    leagueTitle.appendChild(players)
+    
+                })
+
 
                 })
             }

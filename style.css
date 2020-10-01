@@ -5,8 +5,10 @@
 }
 
 img{
-    width: 100px;
+    width: 100%;
 }
+
+
 
 .mainIndex, .mainCompetition{
     display: grid;
@@ -21,12 +23,34 @@ img{
     display: block;
 }
 
-main h2{
+main h1{
     text-align: center;
     margin: 1.5em 0;
 }
 
 .mainTeamName{
     text-align: center;
+}
+
+.coachImg{
+    max-width: 400px;
+    transform: rotate(360deg);
+}
+
+.coach{
+    display: grid;
+    grid-template-columns: repeat(1 ,1fr);
+    justify-items: center;
+}
+
+.teamsTop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.teamsTop img{
+    max-width: 300px;
+    align-self: center;
 }
 
