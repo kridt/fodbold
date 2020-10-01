@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100px;
+}
+
+.mainIndex, .mainCompetition{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20%;
+    grid-row-gap: 10%;
+    justify-items: center;
+    text-align: center;
+}
+
+.mainIndex img{
+    display: block;
+}
+
+main h2{
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.mainTeamName{
+    text-align: center;
+}
+
