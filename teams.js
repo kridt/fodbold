@@ -1,6 +1,7 @@
 let url = new URLSearchParams(window.location.search);
 let api_token = "EbcDwnt2X2QCUF9OeXvVJvToNFwWbYaIN6kb4gOfcrT0ygwS3zuciGbLjXeP";
-let include = "&include=squad.player,coach,transfers,trophies";
+let include = "&include=squad.player,coach";
+
 
 function fetchTeam() {
 
@@ -16,19 +17,22 @@ function fetchTeam() {
                 let coachName = document.querySelector(".coachName");
                 let coachAge = document.querySelector(".coachAge");
                 let coachImg = document.querySelector(".coachImg");
+                let coachNation = document.querySelector(".coachNation");
                 let bigLogo = document.querySelector(".bigLogo");
                 let teamList = teamData.squad.data;
-                let commonName = teamList[1].player.data.common_name;
+                let commonName = teamList;
+           /*      lav en foreach på teamlist i commonname */
                 
 
 
                 nameTitle.innerHTML = teamData.name;
                 coachName.innerHTML = teamData.coach.data.fullname;
                 coachAge.innerHTML = teamData.coach.data.birthdate;
+                coachAge.innerHTML = teamData.coach.data.nationality;
                 coachImg.src = teamData.coach.data.image_path;
                 bigLogo.src = teamData.logo_path;
 
-                console.log(teamList); 
+                console.log(teamData); 
                
                 /* teamList.forEach(function (players) {
                     let playerList = document.querySelector(".mainCompetition");
