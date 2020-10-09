@@ -20,7 +20,6 @@ function fetchTeam() {
                 let coachNation = document.querySelector(".coachNation");
                 let bigLogo = document.querySelector(".bigLogo");
                 let teamList = teamData.squad.data;
-                let commonName = teamList;
            /*      lav en foreach på teamlist i commonname */
                 
 
@@ -28,10 +27,9 @@ function fetchTeam() {
                 nameTitle.innerHTML = teamData.name;
                 coachName.innerHTML = teamData.coach.data.fullname;
                 coachAge.innerHTML = teamData.coach.data.birthdate;
-                coachAge.innerHTML = teamData.coach.data.nationality;
+                coachNation.innerHTML = teamData.coach.data.nationality;
                 coachImg.src = teamData.coach.data.image_path;
                 bigLogo.src = teamData.logo_path;
-
                 console.log(teamData); 
                
                 /* teamList.forEach(function (players) {
